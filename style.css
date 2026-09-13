@@ -76,21 +76,15 @@ h2 {
   gap: 1.5rem;
 }
 
-.profile-img-placeholder {
+.profile-img {
   width: 130px;
   height: 130px;
   border-radius: 50%;
-  background-color: #1a202c;
-  color: #38bdf8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2.5rem;
-  font-weight: bold;
+  object-fit: cover;
   border: 4px solid #38bdf8;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
-
 .about-text h1 {
   font-size: 1.8rem;
   color: #0f172a;
