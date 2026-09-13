@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rafsan Ul Islam - Personal Profile</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: cursive;
+      line-height: 1.6;
+      background-color: #f4f6f8;
+      color: #333333;
+    }
+
+    /* Header & Navigation (Flexbox Layout) */
+    header {
+      background-color: #1a202c;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* Container & Sections */
+    .section-container {
+      max-width: 900px;
+      margin: 1.5rem auto;
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: #1a202c;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #38bdf8;
+      display: inline-block;
+      padding-bottom: 0.2rem;
+    }
+
+    /* About Section (Flexbox Layout) */
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .profile-img-placeholder {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background-color: #1a202c;
+      color: #38bdf8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      border: 4px solid #38bdf8;
+      flex-shrink: 0;
+    }
+
+    .about-text h1 {
+      font-size: 1.8rem;
+      color: #0f172a;
+      margin-bottom: 0.4rem;
+    }
+
+    .about-text .tagline {
+      font-style: italic;
+      color: #0284c7;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    /* Skills Section (CSS Grid Layout) */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .skill-card {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      padding: 0.75rem;
+      text-align: center;
+      border-radius: 6px;
+      font-weight: lighter;
+      border-left: 4px solid #38bdf8;
+    }
+
+    /* Projects Section (CSS Grid Layout) */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .project-card {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 1.2rem;
+      border-radius: 6px;
+    }
+
+    .project-card h3 {
+      color: #0f172a;
+      margin-bottom: 0.4rem;
+    }
+
+    /* Contact Section & Form */
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contact-details p {
+      margin-bottom: 0.4rem;
+      word-break: break-all;
+    }
+
+    .contact-details a {
+      color: #0284c7;
+      text-decoration: none;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.65rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #0284c7;
+    }
+
+    button {
+      background-color: #0284c7;
+      color: #ffffff;
+      border: none;
+      padding: 0.75rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      align-self: flex-start;
+    }
+
+    button:hover {
+      background-color: #0369a1;
+    }
+
+    /* Footer Section */
+    footer {
+      text-align: center;
+      background-color: #1a202c;
+      color: #94a3b8;
+      padding: 1.2rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* Mobile Responsive Tweaks */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+      }
+
+      nav ul {
+        gap: 0.8rem;
+      }
+
+      .about-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      button {
+        width: 100%;
+      }
+
+      .section-container {
+        margin: 0.8rem;
+        padding: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="logo">Rafsan Ul Islam</div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+
+    <!-- About Section -->
+    <section id="about" class="section-container">
+      <div class="about-content">
+        <!-- Initial Circle Avatar for Mobile Compatibility -->
+        <div class="profile-img-placeholder">RU</div>
+        <div class="about-text">
+          <h1>Rafsan Ul Islam</h1>
+          <p class="tagline">"What do you think is beyond your imagination, so let the imagination be true."</p>
+          <p>Passionate computer science student and software development enthusiast dedicated to bringing imaginative technical solutions to life through clean, functional, and efficient code.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-container">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">HTML</div>
+        <div class="skill-card">C</div>
+        <div class="skill-card">C++</div>
+        <div class="skill-card">Leadership</div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        
+        <article class="project-card">
+          <h3>Bank Management System</h3>
+          <p>
+            A comprehensive terminal-based software application designed to handle essential modern banking operations. 
+            It supports account registration, balance verification, deposit and withdrawal handling, and secure data logging 
+            to ensure reliable transaction tracking.
+          </p>
+        </article>
+
+        <article class="project-card">
+          <h3>Online Shopping Management System</h3>
+          <p>
+            An end-to-end management program tailored to simulate online e-commerce operations. 
+            It features structured product catalog handling, automated shopping cart additions, dynamic total bill calculation, 
+            and real-time inventory updates upon checkout.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-container">
+      <h2>Contact</h2>
+      <div class="contact-container">
+        
+        <div class="contact-details">
+          <p><strong>Email:</strong> <a href="mailto:rafsan.ulislam@gmail.com">
+rafsan.ulislam26@gmail.com</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/Rafsan-letscrack/Rafsan.git" target="_blank" rel="noopener noreferrer">github.com/Rafsan-letscrack</a></p>
+        </div>
+
+        <form class="contact-form" action="#" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Your Message..." required></textarea>
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2026 Rafsan Ul Islam. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
