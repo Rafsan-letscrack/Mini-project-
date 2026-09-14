@@ -209,30 +209,3 @@ footer {
   margin-top: 2rem;
   font-size: 0.9rem;
 }
-
-/* Mobile Responsive Tweaks */
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    gap: 0.8rem;
-    text-align: center;
-  }
-
-  nav ul {
-    gap: 0.8rem;
-  }
-
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  button {
-    width: 100%;
-  }
-
-  .section-container {
-    margin: 0.8rem;
-    padding: 1.2rem;
-  }
-}
